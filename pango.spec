@@ -2,13 +2,13 @@
 
 Summary:	System for layout and rendering of internationalized text
 Name:		pango
-Version:	1.31.2
+Version:	1.32.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.31/%{name}-%{version}.tar.xz
-# Source0-md5:	ec3c1f236ee9bd4a982a5f46fcaff7b9
+Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.32/%{name}-%{version}.tar.xz
+# Source0-md5:	73570ab28462fc43960a8d1ffdae43d0
 URL:		http://www.pango.org/
 BuildRequires:	autoconf
 BuildRequires:	automake

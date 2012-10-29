@@ -23,7 +23,7 @@ BuildRequires:	gtk-doc
 BuildRequires:	harfbuzz-devel
 BuildRequires:	libtool
 BuildRequires:	perl-base
-BuildRequires:	pkgconfig
+BuildRequires:	pkg-config
 BuildRequires:	xorg-libX11-devel
 BuildRequires:	xorg-libXft-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

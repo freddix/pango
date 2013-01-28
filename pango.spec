@@ -2,13 +2,13 @@
 
 Summary:	System for layout and rendering of internationalized text
 Name:		pango
-Version:	1.32.4
+Version:	1.32.6
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.32/%{name}-%{version}.tar.xz
-# Source0-md5:	b2ddee691c7dfc10f4133a8773519643
+# Source0-md5:	1af2e3a0ac5a258eff5ceddb6ed60ebd
 Patch0:		%{name}-multi-arch.patch
 URL:		http://www.pango.org/
 BuildRequires:	autoconf
@@ -16,7 +16,7 @@ BuildRequires:	automake
 BuildRequires:	cairo-devel
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	docbook-style-xsl
-BuildRequires:	fontconfig-devel
+BuildRequires:	fontconfig-devel >= 2.10.91
 BuildRequires:	freetype-devel
 BuildRequires:	glib-devel
 BuildRequires:	gobject-introspection-devel

@@ -2,31 +2,31 @@
 
 Summary:	System for layout and rendering of internationalized text
 Name:		pango
-Version:	1.32.5
+Version:	1.36.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.32/%{name}-%{version}.tar.xz
-# Source0-md5:	8e846804d6e219bc795a26a4a39b5bfd
+Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.36/%{name}-%{version}.tar.xz
+# Source0-md5:	5b50052df366e6d7bf08fdd80d58acce
 Patch0:		%{name}-multi-arch.patch
 URL:		http://www.pango.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	cairo-devel
+BuildRequires:	cairo-devel >= 1.12.16-4
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	docbook-style-xsl
-BuildRequires:	fontconfig-devel
+BuildRequires:	fontconfig-devel >= 1:2.10.91
 BuildRequires:	freetype-devel
-BuildRequires:	glib-devel
-BuildRequires:	gobject-introspection-devel
+BuildRequires:	glib-devel >= 1:2.38.0
+BuildRequires:	gobject-introspection-devel >= 1.38.0
 BuildRequires:	gtk-doc
-BuildRequires:	harfbuzz-devel
+BuildRequires:	harfbuzz-devel >= 0.9.21
 BuildRequires:	libtool
 BuildRequires:	perl-base
 BuildRequires:	pkg-config
 BuildRequires:	xorg-libX11-devel
-BuildRequires:	xorg-libXft-devel
+BuildRequires:	xorg-libXft-devel >= 2.3.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %ifarch %{x8664}
@@ -162,8 +162,6 @@ pango-querymodules%{march} > %{_sysconfdir}/pango.modules ||:
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_libdir}/libpango*-1.0.so
-# pkgconfig file missing deps
-%{_libdir}/libpango*-1.0.la
 %{_pkgconfigdir}/pango*.pc
 %{_includedir}/pango-1.0
 %{_datadir}/gir-1.0/*.gir

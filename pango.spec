@@ -2,13 +2,13 @@
 
 Summary:	System for layout and rendering of internationalized text
 Name:		pango
-Version:	1.36.0
+Version:	1.36.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.36/%{name}-%{version}.tar.xz
-# Source0-md5:	5b50052df366e6d7bf08fdd80d58acce
+# Source0-md5:	9e0d3a1ea395172f8c39ba98a4d2081a
 Patch0:		%{name}-multi-arch.patch
 URL:		http://www.pango.org/
 BuildRequires:	autoconf
@@ -95,7 +95,7 @@ Pango API documentation.
 	--enable-man			\
 	--with-html-dir=%{_gtkdocdir}	\
 	--with-included-modules=basic-fc
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT

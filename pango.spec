@@ -2,13 +2,13 @@
 
 Summary:	System for layout and rendering of internationalized text
 Name:		pango
-Version:	1.36.1
+Version:	1.36.2
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.36/%{name}-%{version}.tar.xz
-# Source0-md5:	9e0d3a1ea395172f8c39ba98a4d2081a
+# Source0-md5:	253026c7132c22e52cefd998ba89a742
 Patch0:		%{name}-multi-arch.patch
 URL:		http://www.pango.org/
 BuildRequires:	autoconf
@@ -109,9 +109,7 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}
 touch $RPM_BUILD_ROOT%{_sysconfdir}/pango.modules
 
 # useless (modules loaded through libgmodule)
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/%{apiver}/modules/*.la
-# unsupported locale
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{be@latin,en@shaw,ps}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/{,%{name}/%{apiver}/modules/}*.la
 
 %ifarch %{x8664}
 mv $RPM_BUILD_ROOT%{_bindir}/pango-querymodules{,%{march}}

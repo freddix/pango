@@ -2,14 +2,13 @@
 
 Summary:	System for layout and rendering of internationalized text
 Name:		pango
-Version:	1.36.3
+Version:	1.36.8
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.36/%{name}-%{version}.tar.xz
-# Source0-md5:	d9532826e95bdb374355deebc42441bb
-Patch0:		%{name}-multi-arch.patch
+# Source0-md5:	217a9a753006275215fa9fa127760ece
 URL:		http://www.pango.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -28,14 +27,6 @@ BuildRequires:	pkg-config
 BuildRequires:	xorg-libX11-devel
 BuildRequires:	xorg-libXft-devel >= 2.3.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%ifarch %{x8664}
-%define		march		64
-%define		_sysconfdir	/etc/pango%{march}
-%else
-%define		march		%{nil}
-%define		_sysconfdir	/etc/pango
-%endif
 
 %description
 System for layout and rendering of internationalized text.
@@ -79,7 +70,6 @@ Pango API documentation.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -95,7 +85,7 @@ Pango API documentation.
 	--enable-man			\
 	--with-html-dir=%{_gtkdocdir}	\
 	--with-included-modules=basic-fc
-%{__make} -j1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
